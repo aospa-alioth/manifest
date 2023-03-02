@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Aperture -->
+  <project path="packages/apps/Aperture" name="LineageOS/android_packages_apps_Aperture" revision="lineage-20.0" remote="github" />
+
+  <!-- Build and Core -->
+  <remove-project name="platform/build_repo" />
+  <project path="build/make" name="build" remote="aospa-alioth" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <!-- Frameworks -->
+  <remove-project name="platform/frameworks/av" />
+  <project path="frameworks/av" name="frameworks_av" remote="aospa-alioth" />
+  <remove-project name="platform/frameworks/base" />
+  <project path="frameworks/base" name="frameworks_base" remote="aospa-alioth" />
+  <remove-project name="platform/frameworks/native" />
+  <project path="frameworks/native" name="frameworks_native" remote="aospa-alioth" />
+
+  <!-- GameSpace (Chaldeaprjkt) -->
+  <project path="packages/apps/GameSpace" name="packages_apps_GameSpace" remote="aospa-alioth" />
+
+  <!-- Hardware -->
+  <remove-project name="platform/hardware/interfaces" />
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="aospa-alioth" />
+
+  <!-- Manifest -->
+  <project path="manifest" name="manifest" remote="aospa-alioth" />
+
+  <!-- Packages (AOSPA) -->
+  <project path="packages/resources/devicesettings" name="packages_resources_devicesettings" remote="aospa-alioth" />
+
+  <!-- Packages -->
+  <remove-project name="platform/packages/apps/Launcher3" />
+  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="aospa-alioth" />
+  <remove-project name="platform/packages/apps/Settings" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="aospa-alioth" />
+
+  <!-- Vendor (AOSPA) -->
+  <project path="vendor/aospa" name="vendor_aospa" remote="aospa-alioth" >
+    <linkfile src="build.sh" dest="rom-build.sh" />
+  </project>
+
+</manifest>
